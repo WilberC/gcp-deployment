@@ -7,7 +7,6 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  GKE_ZONE: southamerica-east1
 
 jobs:
   build-and-deploy:
@@ -30,7 +29,7 @@ jobs:
 
       - name: List Instances
         run: |-
-          gcloud compute instances list --project $PROJECT_ID --zone $GKE_ZONE
+          gcloud compute instances list --project $PROJECT_ID
 
 
 #      - name: Build
